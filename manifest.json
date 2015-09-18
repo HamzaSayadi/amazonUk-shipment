@@ -1,0 +1,25 @@
+{
+  "name": "AmazonUk-shipment",
+  "description": "provides shipment options for amazon.co.uk",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs" 
+
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["main.js"]
+  },
+   "content_scripts": [{
+        "matches": ["*://*.amazon.co.uk/*"],
+        "js":      ["content.js"]
+    },{
+        "matches": ["*://*.amazon.co.uk/*"],
+        "js":      ["notify.js"]
+    }],
+  "browser_action": {
+    "default_title": "Shipment UK"
+  },
+  "manifest_version": 2
+}
